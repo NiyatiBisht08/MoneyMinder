@@ -37,13 +37,17 @@ class MyDrawer extends StatelessWidget {
                 title: Text("Profile", style: TextStyle(color: Colors.white)),
               ),
               ListTile(
+                leading: Icon(CupertinoIcons.money_pound, color: Colors.white),
+                title: Text("Wallet", style: TextStyle(color: Colors.white)),
+              ),
+              ListTile(
                 leading: Icon(CupertinoIcons.mail, color: Colors.white),
                 title: Text("Mail", style: TextStyle(color: Colors.white)),
               ),
               ListTile(
                 leading: Icon(CupertinoIcons.settings, color: Colors.white),
                 title: Text("Settings", style: TextStyle(color: Colors.white)),
-              )
+              ),
             ],
           )),
     );
