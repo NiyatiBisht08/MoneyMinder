@@ -10,6 +10,8 @@ class HomePage extends StatefulWidget {
 
   @override
   State<HomePage> createState() => _HomePageState();
+
+  static asset(String s, {required double height}) {}
 }
 
 class _HomePageState extends State<HomePage> {
