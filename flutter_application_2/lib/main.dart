@@ -1,5 +1,3 @@
-// main.dart
-
 import 'package:finku_clone_slicing/Pages/home_page.dart';
 import 'package:finku_clone_slicing/Pages/login_page.dart';
 import 'package:finku_clone_slicing/Utils/routes.dart';
