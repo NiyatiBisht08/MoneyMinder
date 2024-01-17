@@ -3,7 +3,7 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 
-import 'utils.dart';
+import '../Utils/utils.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -629,7 +629,7 @@ class _HomePageState extends State<HomePage> {
                                       height: 5.0,
                                     ),
                                     const Text(
-                                      'Pay\nBills',
+                                      'Split\nBills',
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                           color: black,
