@@ -1,5 +1,9 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'home_page.dart';
+
+// ... (previous imports and class definition)
 
 class LoginPage extends StatelessWidget {
   final TextEditingController _usernameController = TextEditingController();
@@ -23,7 +27,7 @@ class LoginPage extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
-                child: Text('OK'),
+                child: Text('OK', style: TextStyle(color: Colors.red)),
               ),
             ],
           );
@@ -41,7 +45,7 @@ class LoginPage extends StatelessWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Color(0xFF0099FF), // Light Blue
+              Color(0xFF3366FF), // Lighter Blue
               Color(0xFF4F5DFF), // Purple
             ],
           ),
@@ -51,12 +55,23 @@ class LoginPage extends StatelessWidget {
           child: Row(
             children: [
               Expanded(
-                flex: 3, // 65% of the width
+                flex: 3,
                 child: Container(
                   child: Center(
-                    child: Text(
-                      'Left Section',
-                      style: TextStyle(color: Colors.white),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          'assets/logo.png', // Add your logo asset
+                          height: 80.0,
+                          width: 80.0,
+                        ),
+                        SizedBox(height: 16.0),
+                        Text(
+                          'MoneyMinder',
+                          style: TextStyle(color: Colors.white, fontSize: 18.0),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -66,8 +81,9 @@ class LoginPage extends StatelessWidget {
                 color: Colors.white,
               ),
               Expanded(
-                flex: 2, // 35% of the width
+                flex: 2,
                 child: Container(
+                  color: Colors.white, // Set background color to white
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -77,14 +93,14 @@ class LoginPage extends StatelessWidget {
                         child: TextField(
                           controller: _usernameController,
                           decoration: InputDecoration(
+                            prefixIcon: Icon(Icons.person, color: Colors.white),
                             labelText: 'Username',
                             hintText: 'Enter username',
                             border: OutlineInputBorder(),
                             filled: true,
-                            fillColor: Colors.grey[400], // Light grey
+                            fillColor: Colors.grey[300],
                           ),
-                          style:
-                              TextStyle(color: Colors.black), // Dark text color
+                          style: TextStyle(color: Colors.black),
                         ),
                       ),
                       SizedBox(height: 8.0),
@@ -94,23 +110,35 @@ class LoginPage extends StatelessWidget {
                           controller: _passwordController,
                           obscureText: true,
                           decoration: InputDecoration(
+                            prefixIcon: Icon(Icons.lock, color: Colors.white),
                             labelText: 'Password',
                             hintText: 'Enter password',
                             border: OutlineInputBorder(),
                             filled: true,
-                            fillColor: Colors.grey[400], // Light grey
+                            fillColor: Colors.grey[300],
                           ),
-                          style:
-                              TextStyle(color: Colors.black), // Dark text color
+                          style: TextStyle(color: Colors.black),
                         ),
                       ),
                       SizedBox(height: 16.0),
                       ElevatedButton(
                         onPressed: () => _signIn(context),
                         style: ElevatedButton.styleFrom(
-                          primary: Color(0xFF004080), // Dark Blue
+                          primary: Color(0xFF004080),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          elevation: 3.0,
                         ),
-                        child: Text('Login'),
+                        child: Container(
+                          padding: EdgeInsets.symmetric(vertical: 12.0),
+                          child: Center(
+                            child: Text(
+                              'Login',
+                              style: TextStyle(fontSize: 16.0),
+                            ),
+                          ),
+                        ),
                       ),
                     ],
                   ),
