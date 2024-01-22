@@ -261,25 +261,37 @@ class _HomePageState extends State<HomePage> {
                                   textScaleFactor: 0.5,
                                 ),
                                 const Spacer(),
-                                CircleAvatar(
-                                  backgroundColor: Colors.red[100],
-                                  child: const Center(
-                                    child: Text(
-                                      "28",
-                                      style: TextStyle(
-                                          color: red,
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w500),
-                                    ),
+                                InkWell(
+                                  onTap: () {
+                                    // Handle button press here
+                                    print("Button pressed!");
+                                  },
+                                  child: Row(
+                                    children: [
+                                      CircleAvatar(
+                                        backgroundColor: Colors.red[100],
+                                        child: const Center(
+                                          child: Text(
+                                            "28",
+                                            style: TextStyle(
+                                              color: Colors
+                                                  .red, // Use Colors.red for consistency
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        width: 12,
+                                      ),
+                                      const Icon(
+                                        Icons.arrow_forward_ios,
+                                        size: 18,
+                                      ),
+                                    ],
                                   ),
-                                ),
-                                const SizedBox(
-                                  width: 12,
-                                ),
-                                const Icon(
-                                  Icons.arrow_forward_ios,
-                                  size: 18,
-                                ),
+                                )
                               ],
                             ),
                           ),
@@ -362,19 +374,26 @@ class _HomePageState extends State<HomePage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Row(
-                            children: const [
+                            children: [
                               Text(
                                 '🎫 Last transaction',
                                 style: TextStyle(
-                                  color: black,
+                                  color: Colors
+                                      .black, // Use Colors.black for consistency
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
                               Spacer(),
-                              Icon(
-                                Icons.arrow_forward_ios,
-                                size: 18,
+                              InkWell(
+                                onTap: () {
+                                  // Handle button press here
+                                  print("Button pressed!");
+                                },
+                                child: Icon(
+                                  Icons.arrow_forward_ios,
+                                  size: 18,
+                                ),
                               ),
                             ],
                           ),
@@ -432,7 +451,7 @@ class _HomePageState extends State<HomePage> {
                                         SizedBox(
                                           width: 150,
                                           child: Text(
-                                            'Closing Deals, Sealing Success!',
+                                            '',
                                             maxLines: 1,
                                             softWrap: false,
                                             style: TextStyle(
@@ -499,7 +518,7 @@ class _HomePageState extends State<HomePage> {
                           const Text(
                             '💙 Interesting Features',
                             style: TextStyle(
-                              color: black,
+                              color: Colors.black,
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
                             ),
@@ -513,148 +532,179 @@ class _HomePageState extends State<HomePage> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                Stack(
-                                  children: [
-                                    Column(
-                                      children: [
-                                        CircleAvatar(
-                                          radius: 26,
-                                          backgroundColor: secondary,
-                                          child: const Text(
-                                            '🏆',
-                                            style: TextStyle(fontSize: 26),
+                                InkWell(
+                                  onTap: () {
+                                    // Handle Achievements button press
+                                    print("Achievements button pressed!");
+                                  },
+                                  child: Stack(
+                                    children: [
+                                      Column(
+                                        children: [
+                                          CircleAvatar(
+                                            radius: 26,
+                                            backgroundColor: secondary,
+                                            child: const Text(
+                                              '🏆',
+                                              style: TextStyle(fontSize: 26),
+                                            ),
                                           ),
-                                        ),
-                                        const SizedBox(
-                                          height: 5.0,
-                                        ),
-                                        const Text(
-                                          'Achievements',
-                                          style: TextStyle(
-                                              color: black,
-                                              fontWeight: FontWeight.w400,
-                                              fontSize: 14),
-                                        ),
-                                      ],
-                                    ),
-                                    const Positioned(
-                                      left: 33,
-                                      child: CircleAvatar(
-                                        radius: 10,
-                                        backgroundColor: red,
-                                        child: Text(
-                                          '1',
-                                          style: TextStyle(
-                                              color: white,
-                                              fontWeight: FontWeight.w400,
-                                              fontSize: 14),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Stack(
-                                  children: [
-                                    Column(
-                                      children: [
-                                        CircleAvatar(
-                                          radius: 26,
-                                          backgroundColor: Colors.grey[200],
-                                          child: const Text(
-                                            '🎁',
-                                            style: TextStyle(fontSize: 26),
+                                          const SizedBox(
+                                            height: 5.0,
                                           ),
-                                        ),
-                                        const SizedBox(
-                                          height: 5.0,
-                                        ),
-                                        const Text(
-                                          'Invite Friends',
-                                          style: TextStyle(
+                                          const Text(
+                                            'Achievements',
+                                            style: TextStyle(
                                               color: Colors.black,
                                               fontWeight: FontWeight.w400,
-                                              fontSize: 14),
-                                        ),
-                                      ],
-                                    ),
-                                    const Positioned(
-                                      left: 46,
-                                      child: CircleAvatar(
-                                        radius: 10,
-                                        backgroundColor: Colors.red,
-                                        child: Text(
-                                          '1',
-                                          style: TextStyle(
+                                              fontSize: 14,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      const Positioned(
+                                        left: 33,
+                                        child: CircleAvatar(
+                                          radius: 10,
+                                          backgroundColor: Colors.red,
+                                          child: Text(
+                                            '1',
+                                            style: TextStyle(
                                               color: Colors.white,
                                               fontWeight: FontWeight.w400,
-                                              fontSize: 14),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Stack(
-                                  children: [
-                                    Column(
-                                      children: [
-                                        CircleAvatar(
-                                          radius: 26,
-                                          backgroundColor: secondary,
-                                          child: const Text(
-                                            '🤔',
-                                            style: TextStyle(fontSize: 26),
+                                              fontSize: 14,
+                                            ),
                                           ),
                                         ),
-                                        const SizedBox(
-                                          height: 5.0,
-                                        ),
-                                        const Text(
-                                          'Your\nInsights',
-                                          style: TextStyle(
-                                              color: black,
-                                              fontWeight: FontWeight.w400,
-                                              fontSize: 14),
-                                        ),
-                                      ],
-                                    ),
-                                    const Positioned(
-                                      left: 52,
-                                      child: CircleAvatar(
-                                        radius: 10,
-                                        backgroundColor: red,
-                                        child: Text(
-                                          '1',
-                                          style: TextStyle(
-                                              color: white,
-                                              fontWeight: FontWeight.w400,
-                                              fontSize: 14),
-                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
-                                Column(
-                                  children: [
-                                    CircleAvatar(
-                                      radius: 26,
-                                      backgroundColor: secondary,
-                                      child: const Text(
-                                        '🧾',
-                                        style: TextStyle(fontSize: 26),
+                                InkWell(
+                                  onTap: () {
+                                    // Handle Invite Friends button press
+                                    print("Invite Friends button pressed!");
+                                  },
+                                  child: Stack(
+                                    children: [
+                                      Column(
+                                        children: [
+                                          CircleAvatar(
+                                            radius: 26,
+                                            backgroundColor: Colors.grey[200],
+                                            child: const Text(
+                                              '🎁',
+                                              style: TextStyle(fontSize: 26),
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height: 5.0,
+                                          ),
+                                          const Text(
+                                            'Invite Friends',
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 14,
+                                            ),
+                                          ),
+                                        ],
                                       ),
-                                    ),
-                                    const SizedBox(
-                                      height: 5.0,
-                                    ),
-                                    const Text(
-                                      'Split\nBills',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          color: black,
+                                      const Positioned(
+                                        left: 46,
+                                        child: CircleAvatar(
+                                          radius: 10,
+                                          backgroundColor: Colors.red,
+                                          child: Text(
+                                            '1',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 14,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                InkWell(
+                                  onTap: () {
+                                    // Handle Your Insights button press
+                                    print("Your Insights button pressed!");
+                                  },
+                                  child: Stack(
+                                    children: [
+                                      Column(
+                                        children: [
+                                          CircleAvatar(
+                                            radius: 26,
+                                            backgroundColor: secondary,
+                                            child: const Text(
+                                              '🤔',
+                                              style: TextStyle(fontSize: 26),
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height: 5.0,
+                                          ),
+                                          const Text(
+                                            'Your\nInsights',
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 14,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      const Positioned(
+                                        left: 52,
+                                        child: CircleAvatar(
+                                          radius: 10,
+                                          backgroundColor: Colors.red,
+                                          child: Text(
+                                            '1',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 14,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                InkWell(
+                                  onTap: () {
+                                    // Handle Split Bills button press
+                                    print("Split Bills button pressed!");
+                                  },
+                                  child: Column(
+                                    children: [
+                                      CircleAvatar(
+                                        radius: 26,
+                                        backgroundColor: secondary,
+                                        child: const Text(
+                                          '🧾',
+                                          style: TextStyle(fontSize: 26),
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        height: 5.0,
+                                      ),
+                                      const Text(
+                                        'Split\nBills',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          color: Colors.black,
                                           fontWeight: FontWeight.w400,
-                                          fontSize: 14),
-                                    ),
-                                  ],
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ],
                             ),
