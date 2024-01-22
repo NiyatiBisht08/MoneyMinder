@@ -1,8 +1,8 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_import, avoid_print
 
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
-
+import 'login_page.dart';
 import '../Utils/utils.dart';
 
 class HomePage extends StatefulWidget {
@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
                     Row(
                       children: const [
                         Text(
-                          "👋🏻 _Hi username_!",
+                          "👋🏻 Hi _username_!",
                           style: TextStyle(
                             color: white,
                             fontSize: 20,
@@ -148,39 +148,48 @@ class _HomePageState extends State<HomePage> {
                               children: [
                                 Row(
                                   children: const [
-                                    Text("You've already spent ",
-                                        style: TextStyle(
-                                            color: black,
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w500)),
+                                    Text(
+                                      "You've already spent ",
+                                      style: TextStyle(
+                                        color: black,
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
                                     SizedBox(
                                       width: 2,
                                     ),
-                                    Text("₹ 7000",
-                                        style: TextStyle(
-                                            color: black,
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.bold)),
+                                    Text(
+                                      "₹ 7000",
+                                      style: TextStyle(
+                                        color: black,
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
                                   ],
                                 ),
                                 const SizedBox(
                                   height: 2,
                                 ),
                                 Row(
-                                  children: const [
+                                  children: [
                                     SizedBox(
                                       width: 200,
                                       child: Text(
                                         "Come on, make a budget so you don't overspend!",
                                         style: TextStyle(
-                                            color: grey,
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.w500),
+                                          color: grey,
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w500,
+                                        ),
                                       ),
                                     ),
                                     Spacer(),
-                                    Padding(
-                                      padding: EdgeInsets.only(bottom: 10),
+                                    TextButton(
+                                      onPressed: () {
+                                        print('Make a Budget!');
+                                      },
                                       child: Text(
                                         '+ Make a Budget',
                                         style: TextStyle(
@@ -297,21 +306,28 @@ class _HomePageState extends State<HomePage> {
                             ),
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
-                              children: const [
+                              children: [
                                 Text(
                                   "No bill yet",
                                   style: TextStyle(
-                                      fontSize: 14,
-                                      color: grey,
-                                      fontWeight: FontWeight.w500),
+                                    fontSize: 14,
+                                    color: grey,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                                 ),
                                 Spacer(),
-                                Text(
-                                  '+Create Invoice',
-                                  style: TextStyle(
-                                    color: primary,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.bold,
+                                TextButton(
+                                  onPressed: () {
+                                    // Handle button press here
+                                    print('Create Invoice pressed!');
+                                  },
+                                  child: Text(
+                                    '+Create Invoice',
+                                    style: TextStyle(
+                                      color: primary,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                 ),
                               ],
