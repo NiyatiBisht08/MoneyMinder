@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
                     Row(
                       children: const [
                         Text(
-                          "👋🏻 Hi _username_!",
+                          "👋🏻 username_!",
                           style: TextStyle(
                             color: white,
                             fontSize: 20,
